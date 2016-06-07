@@ -1,0 +1,12 @@
+﻿<div ng-controller="CustomersController as vm">
+    <h1>Customers</h1>
+    <p>
+        <input class="form-control" placeholder="Search by name" type="text" ng-model="vm.search" ng-model-options="{ debounce: 500 }" />
+    </p>
+    <table ng-table="vm.tableParams" class="table">
+        <tr ng-repeat="customer in $data">
+            <td data-title="'First Name'" data-sortable="'firstName'">{{customer.firstName}}</td>
+            <td data-title="'Last Name'" data-sortable="'lastName'">{{customer.lastName}}</td>
+        </tr>
+    </table>
+</div>
